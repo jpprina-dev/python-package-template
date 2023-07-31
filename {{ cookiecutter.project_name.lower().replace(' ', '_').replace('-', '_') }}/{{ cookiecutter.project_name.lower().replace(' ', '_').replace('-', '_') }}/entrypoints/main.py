@@ -1,12 +1,11 @@
 # type: ignore[attr-defined]
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-from {{ cookiecutter.repo_name }} import {{ cookiecutter.app_class_name }}
-
+from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} import author
+from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} import example
 
 def main():
-    {{ cookiecutter.app_class_name }}().run()
+    greeting: str = example.hello(author)
+    print(f"{greeting}")
+
 
 
 if __name__ == '__main__':

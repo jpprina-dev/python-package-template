@@ -20,3 +20,4 @@ version: str = get_version()
 
 __author__ = "{{cookiecutter.organization}}"
 __email__ = "{{cookiecutter.email}}"
+__version__ = version

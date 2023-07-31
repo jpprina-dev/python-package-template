@@ -18,5 +18,5 @@ def get_version() -> str:
 
 version: str = get_version()
 
-__author__ = '{{cookiecutter.full_name}}'
-__email__ = '{{cookiecutter.email}}'
+__author__ = "{{cookiecutter.organization}}"
+__email__ = "{{cookiecutter.email}}"

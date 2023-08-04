@@ -143,13 +143,12 @@ addopts = [
 
 [tool.coverage.run]
 source = ["tests"]
-
-[coverage.paths]
-source = "{{ cookiecutter.project_name }}"
-
-[coverage.run]
+omit = [".*", "*/site-packages/*"]
 branch = true
 
-[coverage.report]
-fail_under = 50
+[tool.coverage.paths]
+source = "api-connectors"
+
+[tool.coverage.report]
+fail_under = 80
 show_missing = true

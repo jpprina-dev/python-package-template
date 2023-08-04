@@ -23,6 +23,7 @@ licences_dict = {
     "BSD-3": "bsd3",
     "GNU GPL v3.0": "gpl3",
     "Apache Software License 2.0": "apache",
+    "No License": "none",
 }
 
 

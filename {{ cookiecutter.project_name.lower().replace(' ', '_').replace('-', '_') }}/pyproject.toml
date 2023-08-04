@@ -3,6 +3,7 @@
     'BSD-3': 'License :: OSI Approved :: BSD License',
     'GNU GPL v3.0': 'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
     'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
+    'No License': 'License :: Private Project',
 } -%}
 {%- set python_version_splitted = cookiecutter.minimal_python_version.split('.') | map('int') | list -%}
 # Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
@@ -48,7 +49,7 @@ rich = "^10.14.0"
 {% endif %}
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.1"
-black = {version = "^21.10b0", allow-prereleases = true}
+black = {version = "^22.3.0", allow-prereleases = true}
 darglint = "^1.8.1"
 isort = {extras = ["colors"], version = "^5.10.1"}
 mypy = "^0.910"
@@ -142,13 +143,12 @@ addopts = [
 
 [tool.coverage.run]
 source = ["tests"]
-
-[coverage.paths]
-source = "{{ cookiecutter.project_name }}"
-
-[coverage.run]
+omit = [".*", "*/site-packages/*"]
 branch = true
 
-[coverage.report]
-fail_under = 50
+[tool.coverage.paths]
+source = "api-connectors"
+
+[tool.coverage.report]
+fail_under = 80
 show_missing = true
